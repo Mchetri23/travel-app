@@ -7,7 +7,7 @@ const SearchBar = () => {
   return (
     <SafeAreaView style={[styles.container]}>
       <GooglePlacesAutocomplete
-        placeholder="Search Places"
+        placeholder="Search..."
         onPress={(data, details = null) => console.log(data, details)}
         query={{
           key: apiKey,

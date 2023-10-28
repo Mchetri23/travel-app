@@ -19,13 +19,17 @@ const Dashboard = () => {
         style={{
           width: '93%',
           alignSelf: 'center',
-          flex: 0.5,
+          flex: 0.4,
           justifyContent: 'space-evenly',
         }}>
-        <Text>Select your starting destination!</Text>
-        <SearchBar />
-        <Text>Where do you want to go?</Text>
-        <SearchBar />
+        <View style={{gap: 10}}>
+          <Text style={{color:'#202020', fontStyle:'italic'}}>Select your starting destination!</Text>
+          <SearchBar />
+        </View>
+        <View style={{gap: 10}}>
+          <Text style={{color:'#202020', fontStyle:'italic'}}>Where do you want to go?</Text>
+          <SearchBar />
+        </View>
         <TouchableOpacity
           style={{
             borderWidth: 1,
