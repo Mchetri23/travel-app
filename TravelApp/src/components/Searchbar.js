@@ -3,13 +3,15 @@ import { StyleSheet, View, SafeAreaView, Text, TextInput } from "react-native";
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import apiKey from "../services/apiKey";
 
-const SearchBar = ({ selectedPlace, setSelectedPlace }) => {
+const SearchBar = ({ selectedPlace, setSelectedPlace, lng, setLng, lat, setLat }) => {
   return (
     <SafeAreaView style={[styles.container]}>
       <GooglePlacesAutocomplete
         placeholder="Search..."
-        onPress={(data) => {
+        onPress={(data, details) => {
           setSelectedPlace(data.description);
+          setLng(details?.geometry?.location?.lng)
+          setLat(details?.geometry?.location?.lat)
         }}
         query={{
           key: apiKey,
