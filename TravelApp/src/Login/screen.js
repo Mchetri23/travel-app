@@ -23,7 +23,7 @@ const Login = ({navigation}) => {
 
   return (
     <ImageBackground
-      source={require('../assets/backgr.jpg')}
+      source={require('../assets/backgr.jpeg')}
       style={style.background}>
       <View style={style.container}>
         <View style={{width: '93%', alignSelf: 'center', marginBottom: 20}}>
@@ -68,7 +68,7 @@ const Login = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={{flexDirection:'row', alignSelf:'center'}}>
-          <Text style={{color:'#000'}}>Don't have an account?{" "}</Text>
+          <Text style={{color:'black'}}>Don't have an account?{" "}</Text>
           <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
             <Text style={{color:'#0086ff'}}>Sign up here!</Text>
           </TouchableOpacity>

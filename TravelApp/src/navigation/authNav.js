@@ -12,6 +12,7 @@ const AuthNav = () => {
         <Stack.Screen name='Login' component={Login} options={
             {
                 headerShadowVisible: false,
+                headerShown: false,
                 headerTitle:"",
                 headerStyle:{
                     backgroundColor:'#181418'
@@ -21,6 +22,7 @@ const AuthNav = () => {
         <Stack.Screen name='SignUp' component={signUp} options={
             {
                 headerShadowVisible: false,
+                headerShown: false,
                 headerTitle:"",
                 headerStyle:{
                     backgroundColor:'#181418'

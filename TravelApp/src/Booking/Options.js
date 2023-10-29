@@ -13,6 +13,9 @@ import HomeIoon from '../assets/Home';
 const Options = ({route, navigation}) => {
   const data = route?.params;
 
+  const StartDate = data[2];
+  const EndDate = data[3];
+
   const split = data[1].split(',');
   const RoundAddress = split[split.length - 2].trim();
 
@@ -125,7 +128,7 @@ const Options = ({route, navigation}) => {
         <ScrollView style={{maxHeight: '85%'}}>
           {tickets?.map((item, index) => {
             return (
-              <View
+              <TouchableOpacity
                 key={index}
                 style={{
                   width: '93%',
@@ -137,9 +140,23 @@ const Options = ({route, navigation}) => {
                   elevation: 4,
                   backgroundColor: '#fff',
                   gap: 10,
-                }}>
+                }}
+                onPress={() =>
+                  navigation.navigate(
+                    'Trips',
+                    [GoAddress,
+                    RoundAddress,
+                    StartDate,
+                    EndDate]
+                  )
+                }>
                 <View
-                  style={{flexDirection: 'row', alignSelf: 'center', justifyContent:'space-between', width: '100%'}}>
+                  style={{
+                    flexDirection: 'row',
+                    alignSelf: 'center',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                  }}>
                   <Text
                     style={{
                       fontSize: 23,
@@ -176,7 +193,7 @@ const Options = ({route, navigation}) => {
                 <Text style={{fontSize: 12, color: '#202020'}}>
                   Total price: {item?.Price}
                 </Text>
-              </View>
+              </TouchableOpacity>
             );
           })}
         </ScrollView>

@@ -7,27 +7,29 @@ import auth from '@react-native-firebase/auth';
 import Options from '../Booking/Options';
 import UserIcon from '../assets/userProfile icon';
 import Profile from '../Profile/screen';
-import { useNavigation } from '@react-navigation/native';
-
+import {useNavigation} from '@react-navigation/native';
+import Trips from '../Booking/Trips';
 
 const Stack = createNativeStackNavigator();
 
 const MainNav = ({navigation}) => {
   return (
-    <Stack.Navigator initialRouteName="Dashboard" screenOptions= {({navigation}) => ({
-      headerRight: () => (
-            <TouchableOpacity
-              style={{
-                borderRadius: 20,
-                padding: 5,
-                elevation: 4,
-                backgroundColor: '#fff',
-              }}
-              onPress={() => navigation.navigate('Profile')}>
-              <UserIcon width="20" height="20" />
-            </TouchableOpacity>
-          ),
-    })}>
+    <Stack.Navigator
+      initialRouteName="Dashboard"
+      screenOptions={({navigation}) => ({
+        headerRight: () => (
+          <TouchableOpacity
+            style={{
+              borderRadius: 20,
+              padding: 5,
+              elevation: 4,
+              backgroundColor: '#fff',
+            }}
+            onPress={() => navigation.navigate('Profile')}>
+            <UserIcon width="20" height="20" />
+          </TouchableOpacity>
+        ),
+      })}>
       <Stack.Screen
         name="Dashboard"
         component={Dashboard}
@@ -40,8 +42,8 @@ const MainNav = ({navigation}) => {
           },
         }}
       />
-       <Stack.Screen
-        name='Profile'
+      <Stack.Screen
+        name="Profile"
         component={Profile}
         options={{
           headerShadowVisible: false,
@@ -52,7 +54,8 @@ const MainNav = ({navigation}) => {
             fontWeight: '600',
             fontSize: 23,
             color: '#000',
-          }}}
+          },
+        }}
       />
       <Stack.Screen
         name="Home"
@@ -85,6 +88,14 @@ const MainNav = ({navigation}) => {
           headerStyle: {
             backgroundColor: '#000000D9',
           },
+        }}
+      />
+      <Stack.Screen
+        name='Trips'
+        component={Trips}
+        options={{
+          headerShadowVisible: false,
+          headerShown: false,
         }}
       />
     </Stack.Navigator>
