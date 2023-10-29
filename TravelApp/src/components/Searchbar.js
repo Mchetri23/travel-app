@@ -34,6 +34,7 @@ const SearchBar = ({ selectedPlace, setSelectedPlace, lng, setLng, lat, setLat }
             borderWidth: 1,
             borderRadius: 0,
             zIndex: 3,
+            borderColor:'#e6e6e6'
           },
         }}
         renderTextInput={(props) => (

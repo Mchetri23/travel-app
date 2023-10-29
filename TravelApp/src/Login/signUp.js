@@ -24,7 +24,7 @@ const SignUp = ({navigation}) => {
 
   return (
     <ImageBackground
-      source={require('../assets/backgr.jpg')}
+      source={require('../assets/backgrd.jpg')}
       style={style.background}>
       <View style={style.container}>
         <View style={{width: '93%', alignSelf: 'center', marginBottom: 20}}>

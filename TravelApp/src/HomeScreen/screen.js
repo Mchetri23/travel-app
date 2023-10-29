@@ -29,7 +29,7 @@ const HomeScreen = () => {
         key: apiKey,
         location: `${lat},${lng}`,
         radius: 5000, // in meters
-        type: 'restaurant',
+        type: 'tourist_attraction|hotel|restaurant|point_of_interest',
         keyword: 'recommended',
       };
 
