@@ -1,0 +1,25 @@
+import React, { useEffect,  } from 'react';
+import { Calendar } from 'react-native-calendars';
+
+
+
+const Calendar = ({onChange,marked}) =>{
+  return(
+    <Calendar
+    hideExtraDays
+    style={{
+
+        width: '93%',
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: '#DEDEDE',
+        marginTop: 20,
+      }} 
+      markedDates={marked}
+       onDayPress={day => {
+        onChange(day)
+        //console.log('selected day', day);
+      }}/>
+  )
+}
+export default Calendar

@@ -1,35 +1,37 @@
 import React from "react";
-import { StyleSheet, View, SafeAreaView, Text } from "react-native";
+import { StyleSheet, View, SafeAreaView, Text, TextInput } from "react-native";
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import apiKey from "../services/apiKey";
 
-const SearchBar = () => {
+const SearchBar = ({ selectedPlace, setSelectedPlace }) => {
   return (
     <SafeAreaView style={[styles.container]}>
       <GooglePlacesAutocomplete
         placeholder="Search..."
-        onPress={(data, details = null) => console.log(data, details)}
+        onPress={(data) => {
+          setSelectedPlace(data.description);
+        }}
         query={{
           key: apiKey,
           language: "en",
         }}
         fetchDetails={true}
         onFail={(error) => console.log(error)}
-        onNotFound={() => console.log('no results')}
         styles={{
           textInputContainer: {
-            color:'#000',
-            alignSelf:'center',
+            color: '#000',
+            alignSelf: 'center',
           },
           textInput: {
             borderWidth: 1,
-            borderColor:'#d4d4d4'
+            borderColor: '#d4d4d4',
+            fontSize: 12,
           },
           listView: {
-            alignSelf:'center',
+            alignSelf: 'center',
             borderWidth: 1,
             borderRadius: 0,
-            borderColor:'#d4d4d4'
+            zIndex: 3,
           },
         }}
         renderTextInput={(props) => (

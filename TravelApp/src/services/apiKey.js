@@ -1,1 +1,1 @@
-export default apiKey = 'aacc'
+export default apiKey = 'AIzaSyBCVYrS4QGzIfBCtELuKzNQE3vnMyurzbc'
